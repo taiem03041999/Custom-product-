@@ -1,0 +1,178 @@
+.footer {
+    padding: 35px 0 30px;
+    background: url(/assets/images/Footer/Footer-back.png) center/cover no-repeat;
+
+    @include responsive_bothTM {
+        padding: 28px 0 20px;
+    }
+
+    &-top {
+        @include flexBox(bottom);
+        justify-content: space-between;
+        padding-bottom: 28px;
+        border-bottom: 1.4px solid rgba(#fff, 0.25);
+
+        @include responsive_bothTM {
+            padding-bottom: 20px;
+        }
+
+        @include responsive_mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &-bottom {
+        padding-top: 34px;
+        @include flexBox(top);
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include responsive_bothTM {
+            padding-top: 20px;
+        }
+
+        @include responsive_table {
+            @include gridBox(2, 40px, 50px);
+        }
+
+        @include responsive_mobile {
+            @include gridBox(1, 30px, 20px);
+        }
+    }
+
+    &-social {
+        @include flexBox(hor);
+
+        &__link {
+            width: 32px;
+            height: 32px;
+
+            & + & {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    &-logo {
+        @include responsive_bothTM {
+            max-width: 220px;
+        }
+
+        @include responsive_mobile {
+            margin-bottom: 26px;
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+
+        @include responsive_bothTM {
+            margin-bottom: 14px;
+            font-size: 17px;
+        }
+    }
+
+    &-info {
+        width: 28%;
+
+        @include responsive_bothTM {
+            width: 100%;
+        }
+
+        & > h4 {
+            @include responsive_mobile {
+                text-align: center;
+            }
+        }
+
+        &__item {
+            @include flexBox(top);
+
+            & + & {
+                margin-top: 10px;
+            }
+
+            & > svg {
+                margin-top: 2px;
+                margin-right: 14px;
+                min-width: 20px;
+            }
+        }
+
+        &__detail {
+            color: #fff;
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        &__desc {
+            font-size: 14px;
+
+            & > p {
+                @include responsive_bothTM {
+                    display: inline;
+                }
+            }
+        }
+
+        &__link {
+            color: #fff;
+            line-height: 1.5;
+            font-size: 20px;
+        }
+    }
+
+    &-nav {
+        &__list {
+            & > .nav-link {
+                padding: 4px 0px;
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+    }
+
+    &-down {
+        @include responsive_mobile {
+            text-align: center;
+        }
+
+        &__app {
+            @include flexBox(hor);
+
+            @include responsive_mobile {
+                justify-content: center;
+            }
+        }
+
+        &__link {
+            & + & {
+                margin-left: 14px;
+            }
+        }
+    }
+
+    &-copyright {
+        padding-top: 70px;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+
+        @include responsive_bothTM {
+            padding-top: 30px;
+        }
+    }
+}

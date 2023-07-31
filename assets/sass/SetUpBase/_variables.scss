@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Roboto";
+    src:
+        local("UTM-Edwardian"),
+        url("/assets/font/UTM-EdwardianKT.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+$font-main: "Roboto", sans-serif;
+$font-sub: "Roboto", sans-serif;
+$font-special: "Roboto";
+
+// ======================== Color Main ========================
+$color-main: #1e6332;
+$color-title: #262626;
+$color-desc: #6c757d;
+
+$color-add: #09883e;
+
+$color-yellow: #ffc107;
+$color-orange: #f68b1f;
+$color-red: #b01616;
+$color-sub: #cdcdcd;
+$color-border: #4e6579;
+$color-green: #2f9792;
+$color-success: #8cc63f;
+
+// ======================== Back color ========================
+$back-body: #f2f3f7;
+
+// ======================== Color mix ========================
+$back-mix: linear-gradient(172deg, rgba(140, 198, 63, 1) 19%, rgba(71, 161, 97, 1) 100%);
+$back-mix-bg: linear-gradient(138deg, rgba(89, 152, 57, 1) 0%, rgba(30, 99, 50, 1) 100%);
+$box-main: rgba(0, 0, 0, 0.04) 5px 5px 15px;

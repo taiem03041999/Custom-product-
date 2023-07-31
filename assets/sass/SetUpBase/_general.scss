@@ -1,0 +1,177 @@
+.general {
+    &-wrapper {
+        margin-bottom: 35px;
+        padding: 25px 30px;
+
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow:
+            rgba(0, 0, 0, 0.04) 0px 4px 6px -1px,
+            rgba(0, 0, 0, 0.04) 0px 2px 4px -1px;
+
+        @include responsive_fitLow {
+            padding: 22px 22px;
+        }
+
+        @include responsive_table {
+            padding: 22px 22px;
+        }
+
+        @include responsive_mobile {
+            padding: 18px 18px;
+        }
+    }
+
+    &-header {
+        padding-bottom: 20px;
+        border-bottom: 1.2px solid $color-sub;
+        @include flexBox(bothSides);
+
+        @include responsive_pcLower {
+            padding-bottom: 14px;
+        }
+
+        @include responsive_mobile {
+            padding-bottom: 14px;
+        }
+
+        &.special {
+            color: #fff;
+            border-bottom: 0;
+
+            .general-header__link {
+                color: #fff;
+
+                & > svg > path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        &.short {
+            border-bottom: 0;
+        }
+
+        &__title {
+            font-size: 19px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            @include responsive_fitLow {
+                font-size: 18px;
+            }
+
+            @include responsive_mobile {
+                font-size: 15px;
+            }
+        }
+
+        &__link {
+            font-style: italic;
+            color: $color-orange;
+
+            &:hover {
+                color: $color-orange;
+                text-decoration: underline;
+            }
+
+            @include responsive_table {
+                font-size: 15px;
+            }
+
+            @include responsive_mobile {
+                font-size: 14px;
+            }
+
+            & > svg {
+                margin-left: 6px;
+            }
+        }
+    }
+
+    &-check {
+        @include flexBox(hor);
+
+        &__tick {
+            position: relative;
+            min-width: 22px;
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+
+            border: 2.8px solid $color-sub;
+            border-radius: 4px;
+            transition: all 0.1s;
+
+            &.special {
+                border-color: #8cc63f;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                transition: all 0.4s;
+            }
+
+            &::after {
+                right: -4px;
+                top: -9px;
+
+                width: 7px;
+                height: 18px;
+                z-index: 9;
+                transform: rotate(138deg);
+                background-color: #ffffff;
+            }
+
+            &::before {
+                display: none;
+                z-index: 10;
+
+                left: 1%;
+                top: 51%;
+                width: 18px;
+                height: 7px;
+
+                border-radius: 1px;
+                border-right: 2.8px solid #8cc63f;
+                border-top: 2.8px solid #8cc63f;
+                transform: rotate(134deg) translate(-50%, 50%);
+            }
+        }
+
+        .tick {
+            &-check {
+                user-select: none;
+                display: none;
+
+                &:checked {
+                    & ~ .general-check__tick {
+                        border-color: #8cc63f;
+
+                        &::before {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            &-text {
+                user-select: none;
+            }
+        }
+    }
+
+    &-btn {
+        width: 100%;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 10px 9px;
+
+        border: 0;
+        border-radius: 10px;
+        background-color: $color-orange;
+    }
+}

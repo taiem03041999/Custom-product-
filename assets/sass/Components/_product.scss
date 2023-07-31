@@ -1,0 +1,161 @@
+.product {
+    &-header {
+        margin: 30px 0 25px;
+
+        &__title {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .fa-star {
+            font-size: 16px;
+
+            &.active {
+                color: $color-yellow;
+            }
+        }
+
+        &__sub {
+            font-weight: 500;
+
+            & > span {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &-gallery {
+        position: relative;
+
+        &__list {
+            @include gridBox(4, 8px, 8px);
+            border-radius: 15px;
+            overflow: hidden;
+
+            .product-gallery {
+                &__img:nth-child(1) {
+                    grid-row: 1 / 3;
+                    grid-column: 1 / 3;
+                    height: 100%;
+
+                    @include imgPT(100%);
+                }
+
+                &__img:nth-child(2),
+                &__img:nth-child(3),
+                &__img:nth-child(4),
+                &__img:nth-child(5) {
+                    height: 50%;
+
+                    @include imgPT(100%);
+                }
+            }
+        }
+
+        &__other {
+            display: none;
+        }
+
+        &__all {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 15px;
+
+            padding: 8px 10px 7px;
+            bottom: 10px;
+            right: 10px;
+
+            font-size: 15px;
+            color: $color-title;
+            text-decoration: none;
+
+            &:hover {
+                color: $color-title;
+            }
+
+            & > svg {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &-main {
+        margin-top: 50px;
+        @include flexBox(bothSides);
+    }
+
+    &-box {
+        margin-bottom: 16px;
+        @include flexBox(bothSides);
+
+        &__detail {
+            color: $color-desc;
+            font-weight: 500;
+        }
+
+        &__text {
+            padding-right: 16px;
+        }
+
+        &__avatar {
+            width: 50px;
+            height: 50px;
+            @include imgPT(0%);
+            margin-right: 16px;
+            border-radius: 50%;
+        }
+    }
+
+    &-content {
+        &__sub {
+            font-size: 20px;
+        }
+
+        &__item {
+            padding: 16px 0;
+            border-top: 1px solid rgba($color: $color-desc, $alpha: 0.25);
+        }
+
+        &__modal {
+            text-decoration: none;
+            color: $color-green;
+            margin-top: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &__date {
+            margin: 10px 0;
+
+            & > input {
+                padding: 5px 20px;
+                border-radius: 25px;
+                border: 1px solid #888;
+            }
+        }
+    }
+
+    &-time {
+        @include flexBox(hor);
+        flex-flow: row wrap;
+        margin: 10px 0;
+
+        &__btn {
+            @include flexBox(both);
+            padding: 4px 12px 5px;
+            border: 1px solid #888;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 6px 6px 0;
+            font-size: 13px;
+
+            &.active,
+            &:hover {
+                background-color: #222;
+                color: #fff;
+            }
+        }
+    }
+}
